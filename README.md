@@ -35,4 +35,12 @@ node server.js
 cd frontend  
 npm install  
 npm start  
+## Notes
+
+- Requires MySQL setup for database connection
+- node_modules are excluded using .gitignore
+
+## About
+
+This project was developed as a group project  as part of a bachelor’s course.
 
