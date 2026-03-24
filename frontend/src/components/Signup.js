@@ -1,0 +1,66 @@
+// Signup.js
+
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Validation from "./SignupValidation";
+import axios from 'axios';
+import "./Login.css";
+
+const Signup = () => {
+    const [values, setValues] = useState({
+        name: '',
+        email: '',
+        password: ''
+    })
+    const navigate = useNavigate();
+    const [errors, setErrors] = useState({})
+
+    const handleInput =(event) =>{
+        setValues(prev => ({...prev, [event.target.name]: [event.target.value]}))
+    }
+
+    const handleSubmit =(event) =>{
+        event.preventDefault();
+        setErrors(Validation(values));
+        if(errors.name === "" && errors.email === "" && errors.password === "") {
+            axios.post('http://localhost:8081/signup', values)
+            .then(res => {
+                navigate('/');
+            })
+            .catch(err => console.log(err));
+        }
+    }
+
+    return (
+        <div className='container d-flex justify-content-end align-items-center bg-plum'>
+            <div className="bg-green p-3 rounded w-40">
+            <h2>Sign-Up</h2>
+                   <form action="" onSubmit={handleSubmit}>
+                        <div className="mb-3">
+                            <label htmlFor="name"><strong>Name</strong></label>
+                            <input type="text" placeholder="Enter Name" name="name"
+                            onChange={handleInput} className="form-control rounded-0"/>
+                            {errors.name && <span className="text-danger"> {errors.name} </span>}
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="email"><strong>Email</strong></label>
+                            <input type="email" placeholder="Enter Mail" name="email"
+                            onChange={handleInput} className="form-control rounded-0"/>
+                            {errors.email && <span className="text-danger"> {errors.email} </span>}
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="password"><strong>Password</strong></label>
+                            <input type="password" placeholder="Enter Password" name="password"
+                            onChange={handleInput} className="form-control rounded-0"/>
+                            {errors.password && <span className="text-danger"> {errors.password} </span>}
+                        </div>
+                        <button type="submit" className="btn btn-success w-100">Signup</button>
+                        <p><strong>You are agree to our terms and policies</strong></p>
+                        <Link to='/' className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">Login</Link>
+                   </form>
+                </div>   
+        </div>    
+    );
+};
+
+export default Signup;

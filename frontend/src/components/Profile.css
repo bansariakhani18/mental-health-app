@@ -1,0 +1,73 @@
+.nav-ul{
+    padding: 5px;
+    margin: 0;
+    background-color: black;
+    overflow: hidden;
+}
+
+.nav-ul li{
+    display: inline-block;
+    padding: 10px;
+    float: left;
+    background-color: black;
+}
+
+.nav-ul li a{
+    color: #fff;
+    padding: 5px;
+    text-decoration: none;
+}
+
+/* HomePage.css */
+
+/* SignUp.css */
+
+.signup-container2 {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: peachpuff;
+    float: right;
+    margin-right: 200px;
+}
+
+.signup-image2 {
+    float: left; /* Float the image to the left */
+    margin-right: 20px; /* Add some margin to the right for spacing */
+    margin-left: 250px;
+    margin-bottom: 0;
+    width: 500px; /* Set the width of the image */
+    height: 450px; /* Allow the height to adjust automatically */
+    background-color: pink;
+    border-radius: 50px;
+}
+
+.signup-container2 h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.footer{
+    overflow: hidden;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    background-color: black;
+    color: #fff;
+}

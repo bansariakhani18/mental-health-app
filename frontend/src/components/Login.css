@@ -1,0 +1,28 @@
+.bg-plum {
+    background-image: url('C:\Users\HP\Desktop\mhc\frontend\src\components\images\2.png'); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* You can adjust the color as per your preference */
+}
+
+.bg-green {
+    margin-right: 100px; /* Add margin to the right side */
+}
+
+/* Adjust width and height of the container */
+.container {
+    width: 100%; /* Adjust width if needed */
+    height: 100vh; /* Adjust height if needed */
+}
+
+.button-3d {
+    background-color: #4CAF50;
+    box-shadow: 0 5px #3e8e41;
+    transition-duration: 0.2s;
+}
+
+.button-3d:hover {
+    background-color: #45a049;
+    box-shadow: 0 3px #3e8e41;
+    transform: translateY(2px);
+}
